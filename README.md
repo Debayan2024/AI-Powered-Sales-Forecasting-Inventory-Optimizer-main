@@ -80,7 +80,3 @@ jupyter notebook "_Sales_Forecasting___Inventory_Optimization.ipynb"
 Then open the `.pbix` in Power BI Desktop, pointed at `sales_forecast.csv` and `Cleaned_Superstore.csv`.
 
 ---
-
-## About me
-
-**Mehfil** — B.Tech in AI & Data Science, based in India, looking at Data Analyst roles (open to the UAE).
