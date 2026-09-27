@@ -47,11 +47,11 @@ Flow: raw CSV → clean/dedupe → `Cleaned_Superstore.csv` → Prophet forecast
 
 ## What I'd fix if I kept going
 
-Being honest about the gaps here on purpose — I think it says more than pretending the model's done:
+Being honest about the gaps here on purpose — I think it says more than pretending the model's done. In priority order:
 
+- **No quantified backtest yet — this is the one that actually matters most.** Right now "the forecast tracks actuals pretty well" is an eyeball judgment off a chart, not a number. Before this goes anywhere near a real stocking decision, it needs a proper holdout evaluation (MAPE/MAE against a held-out window, ideally compared against a naive seasonal baseline so "Prophet helps" is a measured claim, not an assumed one). Everything else on this list is a refinement; this one is the difference between a demo and a model you'd actually trust.
 - The Prophet model only knows about dates right now. Discounts, holidays, and promotions are obvious drivers of the variance it's missing.
 - One global model glosses over the fact that Furniture and Technology probably don't move the same way seasonally. Splitting by category would probably help.
-- I haven't actually backtested this — no MAPE/MAE, just eyeballing the chart. That's the next thing I'd add before trusting this for a real decision.
 - Turning the forecast into an actual reorder-point recommendation would need lead time and holding cost numbers I don't have yet, but that's the real endpoint of a project like this.
 
 ---
